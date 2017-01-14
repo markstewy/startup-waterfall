@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./content/bootstrap/dist/css/bootstrap.css">
+  </head>
+  <body>
+
+    <ui-view></ui-view>
+
+    <!--ANGULAR-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+
+    <!--app-->
+    <script src="./app/app.module.js"></script>
+
+	<!-- core modules -->
+	<script src="./app/core/core.module.js"></script>
+	<script src="./app/core/config.route.js"></script>
+	<script src="./app/core/dataSvc.js"></script>
+
+	<!-- auth -->
+	<script src="./app/auth/auth.module.js"></script>
+	<script src="./app/auth/authCtrl.js"></script>
+	<script src="./app/auth/signInUpDir.js"></script>
+    <script src="./app/auth/logoutDir.js"></script>
+
+	<!-- nav -->
+	<script src="./app/nav/nav.module.js"></script>
+	<script src="./app/nav/navCtrl.js"></script>
+	<script src="./app/nav/navDir.js"></script>
+
+	<!-- home -->
+	<script src="./app/home/home.module.js"></script>
+	<script src="./app/home/homeCtrl.js"></script>
+
+	<!-- profile -->
+	<script src="./app/profile/profile.module.js"></script>
+    <script src="./app/profile/profileCtrl.js"></script>
+
+	<!-- chartsjs CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
+
+  </body>
+</html>

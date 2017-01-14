@@ -1,0 +1,12 @@
+<form>
+  Email: <input type="email" ng-model="user.email" required/>
+  Password: <input type="password" ng-model="user.password" required/>
+  <button type="submit" ng-click="authCtrl.login(user)">login</button>
+</form>
+<br><br><br>
+<form>
+  Name: <input type="text" ng-model="newUser.name" required/>
+  Email: <input type="email" ng-model="newUser.email" required/>
+  Password: <input type="password" ng-model="newUser.password" required/>
+  <button type="submit" ng-click="authCtrl.register(newUser)">Register</button>
+</form>

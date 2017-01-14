@@ -1,0 +1,33 @@
+PROFILE
+<nav-dir></nav-dir>
+<logout-dir></logout-dir>
+{{profileCtrl.user}}
+
+
+
+
+<ul ng-repeat="item in profileCtrl.list">
+    <!-- <td><a ng-click="selectPatient(Patient)">{{Patient._id}}</a></td> -->
+    <li>{{item.item}}
+      <button type='button' name='button' ng-click='profileCtrl.deleteToDo(item._id)'>Delete</button>
+      <div>
+         <input type="text" name="name" value="" placeholder="" ng-model="change">
+         <button type='button' name='button' ng-click='profileCtrl.updateToDo(item._id, change)'>Update</button
+      </div>
+   </li>
+</ul>
+<input type="text" placeholder="add item" ng-model="toDo.item">
+<br>
+<!--<input type="text" placeholder="" ng-model="toDo.other"> <br>-->
+<br>
+<button type="button" class="" ng-click="profileCtrl.addToDo(toDo)">Submit</button><br>
+
+=======================
+
+<br><br>
+input number
+<br>
+<input type="text" ng-model="swapi"><br>
+
+<button type="button" data-ng-click="profileCtrl.getTitle(swapi)" name="button">test</button>
+{{profileCtrl.title}}

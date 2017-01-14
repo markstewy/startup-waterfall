@@ -1,0 +1,106 @@
+<!-- HOME -->
+<!-- <sign-in-up-dir></sign-in-up-dir> -->
+<div class="col-sm-2 col-sm-offset-1">
+    <form>
+		<h2>Pricing</h2>
+		<div class="form-group">
+            <label># of New Preferred Shares</label>
+            <input ng-model="scenario.pShares" class="form-control" type="number" placeholder="">
+        </div>
+		<div class="form-group">
+            <label>Price per New Preferred Share</label>
+            <input ng-model="scenario.pPrice" class="form-control" type="number" placeholder="">
+        </div>
+		<div class="form-group">
+			<label>Fully Dilutive Common Shares Outstanding</label>
+			<input ng-model="scenario.cShares" class="form-control" type="number" placeholder="">
+		</div>
+		<h2>Terms</h2>
+        <div class="form-group">
+            <label>Liquidation Preference Multiple</label>
+            <select ng-model="scenario.lpMultiple" class="form-control">
+                <option value="1" type="number">1x</option>
+                <option value=1.5 type="number">1.5x</option>
+                <option value="2" type="number">2x</option>
+                <option value="2.5" type="number">2.5x</option>
+                <option value="3" type="number">3x</option>
+            </select>
+        </div>
+		<div class="form-group">
+            <label>Participation Rights</label>
+            <select ng-model="scenario.part" class="form-control">
+                <option value="true">yes</option>
+                <option value="false">no</option>
+            </select>
+        </div>
+		<div class="form-group">
+            <label>Participation Cap</label>
+            <select ng-model="scenario.partCap" class="form-control">
+                <option value="true">yes</option>
+                <option value="false">no</option>
+            </select>
+        </div>
+		<div class="form-group">
+            <label>Cap Multiple</label>
+            <select ng-model="scenario.partCapMultiple" class="form-control">
+                <option value="1">1x</option>
+                <option value="1.5">1.5x</option>
+                <option value="2">2x</option>
+                <option value="2.5">2.5x</option>
+                <option value="3">3x</option>
+            </select>
+        </div>
+		<div class="form-group">
+			<label>Cumulative Dividends</label>
+			<select ng-model="scenario.div" class="form-control">
+				<option value="true">yes</option>
+				<option value="false">no</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label>Dividend Compounding Period</label>
+			<select ng-model="scenario.divCompound" class="form-control">
+				<option value="1">annual</option>
+				<option value="2">semi-annual</option>
+			</select>
+		</div>
+		<div class="form-group">
+            <label>Dividend % Rate (decimal)</label>
+            <input ng-model="scenario.divRate" class="form-control" type="number" min="0" max="1" step="0.01" placeholder="0.03 = 3%">
+        </div>
+		<h2>Assumptions</h2>
+		<div class="form-group">
+            <label>Years to exit</label>
+            <input ng-model="scenario.exitYears" class="form-control" placeholder="">
+        </div>
+		<div class="form-group">
+            <label>Min Exit Value</label>
+            <input ng-model="scenario.minExitVal" class="form-control" placeholder="">
+        </div>
+		<div class="form-group">
+            <label>Max Exit Value</label>
+            <input ng-model="scenario.maxExitVal" class="form-control" placeholder="">
+        </div>
+        <button ng-click="homeCtrl.waterfallCalc(scenario)" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<div class="col-sm-8 col-sm-offset-1">
+	<h4>Pre-Money Valuation</h4>
+	{{homeCtrl.pre | currency:"$":0}}
+	<h4>Post-Money Valuation</h4>
+	{{homeCtrl.post | currency:"$":0}}
+	<h4>Preferred Value</h4>
+	{{homeCtrl.waterfallCalcResults.pVal | currency:"$":0}}<br>
+	<!-- {{homeCtrl.waterfallCalcResults.percentPrefVal}} of total value<br>
+	{{homeCtrl.waterfallCalcResults.percentPrefShares}} of total shares -->
+	<h4>Common Value</h4>
+	{{homeCtrl.waterfallCalcResults.cVal | currency:"$":0}}<br>
+	<!-- {{homeCtrl.waterfallCalcResults.percentComVal}} of total value<br>
+	{{homeCtrl.waterfallCalcResults.percentComShares}} of total shares -->
+
+	{{homeCtrl.resultsObj.iVal}}<br>
+	{{homeCtrl.resultsObj.pVal}}<br>
+	{{homeCtrl.resultsObj.cVal}}
+
+</div>
+<canvas id="myChart" width="600px" height="900px"></canvas>
