@@ -29,6 +29,15 @@
                     minExitVal: '0',
                     maxExitVal: '110'
                 }
+			if (w.part === 'false') {
+				w.partCap = null;
+				w.partCapMultiple = null;
+			}
+			if (w.div == 'false') {
+				w.divCompound = null;
+				w.divRate = null;
+				w.exitYears = null;
+			}
             // ==============
             vm.pre = w.pPrice * w.cShares;
             vm.post = w.pPrice * (w.cShares + w.pShares);

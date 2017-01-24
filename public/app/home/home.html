@@ -1,120 +1,7 @@
 <!-- HOME -->
 <!-- <sign-in-up-dir></sign-in-up-dir> -->
 <!-- <nav-dir></nav-dir> -->
-<!-- <div class="col-sm-10 col-sm-offset-1">
-	<form>
-		<div class="col-sm-3">
-			<h2>Pricing</h2>
-			<div class="form-group">
-				<label># of New Preferred Shares</label>
-				<input ng-model="scenario.pShares" class="form-control" type="number" placeholder="">
-			</div>
-			<div class="form-group">
-				<label>Price per New Preferred Share</label>
-				<input ng-model="scenario.pPrice" class="form-control" type="number" placeholder="">
-			</div>
-			<div class="form-group">
-				<label>Fully Dilutive Common Shares Outstanding</label>
-				<input ng-model="scenario.cShares" class="form-control" type="number" placeholder="">
-			</div>
-		</div>
-		<div class="col-sm-3">
-			<h2>Terms</h2>
-			<div class="form-group">
-				<label>Liquidation Preference Multiple</label>
-				<select ng-model="scenario.lpMultiple" class="form-control">
-                <option value="1" type="number">1x</option>
-                <option value=1.5 type="number">1.5x</option>
-                <option value="2" type="number">2x</option>
-                <option value="2.5" type="number">2.5x</option>
-                <option value="3" type="number">3x</option>
-            </select>
-			</div>
-			<div class="form-group">
-				<label>Participation Rights</label>
-				<select ng-model="scenario.part" class="form-control">
-                <option value="true">yes</option>
-                <option value="false">no</option>
-            </select>
-			</div>
-			<div class="form-group">
-				<label>Participation Cap</label>
-				<select ng-model="scenario.partCap" class="form-control">
-                <option value="true">yes</option>
-                <option value="false">no</option>
-            </select>
-			</div>
-		</div>
-		<div class="col-sm-3">
-			<div class="form-group">
-				<label>Cap Multiple</label>
-				<select ng-model="scenario.partCapMultiple" class="form-control">
-                <option value="1">1x</option>
-                <option value="1.5">1.5x</option>
-                <option value="2">2x</option>
-                <option value="2.5">2.5x</option>
-                <option value="3">3x</option>
-            </select>
-			</div>
-			<div class="form-group">
-				<label>Cumulative Dividends</label>
-				<select ng-model="scenario.div" class="form-control">
-				<option value="true">yes</option>
-				<option value="false">no</option>
-			</select>
-			</div>
-			<div class="form-group">
-				<label>Dividend Compounding Period</label>
-				<select ng-model="scenario.divCompound" class="form-control">
-				<option value="1">annual</option>
-				<option value="2">semi-annual</option>
-			</select>
-			</div>
-			<div class="form-group">
-				<label>Dividend % Rate (decimal)</label>
-				<input ng-model="scenario.divRate" class="form-control" type="number" min="0" max="1" step="0.01" placeholder="0.03 = 3%">
-			</div>
-		</div>
-		<div class="col-sm-3">
-			<h2>Assumptions</h2>
-			<div class="form-group">
-				<label>Years to exit</label>
-				<input ng-model="scenario.exitYears" class="form-control" placeholder="">
-			</div>
-			<div class="form-group">
-				<label>Min Exit Value</label>
-				<input ng-model="scenario.minExitVal" class="form-control" placeholder="">
-			</div>
-			<div class="form-group">
-				<label>Max Exit Value</label>
-				<input ng-model="scenario.maxExitVal" class="form-control" placeholder="">
-			</div>
-		</div>
-		<button ng-click="homeCtrl.waterfallCalc(scenario)" type="submit" class="btn btn-primary">Submit</button>
-	</form>
-</div>
 
-<div class="col-sm-12">
-	<h4>Pre-Money Valuation</h4>
-	{{homeCtrl.pre | currency:"$":0}}
-
-	<h4>Post-Money Valuation</h4>
-	{{homeCtrl.post | currency:"$":0}}
-
-	<h4>Preferred Value</h4>
-	{{homeCtrl.resultsObj.pVal}}
-
-	<h4>Common Value</h4>
-	{{homeCtrl.resultsObj.cVal}}
-
-	<h4>Exit Value</h4>
-	{{homeCtrl.resultsObj.iVal}}<br>
-
-
-</div>
-<br>
-<canvas id="myChart" width="600px" height="900px"></canvas>
- -->
 
 <!-- =============================== -->
 <!-- =============================== -->
@@ -130,7 +17,7 @@
 				Menu <i class="fa fa-bars"></i>
 			</button>
 			<a class="navbar-brand page-scroll" href="#page-top">
-				<i class="fa fa-play-circle"></i> <span class="light">Start</span> Bootstrap
+				<i class="fa fa-play-circle"></i> <span class="light">SeedVal</span>
 			</a>
 		</div>
 
@@ -145,7 +32,7 @@
 					<a class="page-scroll" href="#about">About</a>
 				</li>
 				<li>
-					<a class="page-scroll" href="#download">Download</a>
+					<a class="page-scroll" href="#download">Calculator</a>
 				</li>
 				<li>
 					<a class="page-scroll" href="#contact">Contact</a>
@@ -158,76 +45,183 @@
 </nav>
 
 
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Grayscale</h1>
-                        <p class="intro-text">A free, responsive, one page Bootstrap theme.
-                            <br>Created by Start Bootstrap.</p>
-                        <a href="#about" class="btn btn-circle page-scroll">
+<!-- Intro Header -->
+<header class="intro">
+	<div class="intro-body">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h1 class="brand-heading">SEEDVal</h1>
+					<p class="intro-text" style="font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;">Visualize investment terms
+						<br>and make good decisions.</p>
+					<!-- <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+                        </a> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
 
-    <!-- About Section -->
-    <section id="about" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>About Grayscale</h2>
-                <p>Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
-                <p>This theme features stock photos by <a href="http://gratisography.com/">Gratisography</a> along with a custom Google Maps skin courtesy of <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>
-                <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization.</p>
-            </div>
-        </div>
-    </section>
+<!-- About Section -->
+<section id="about" class="container content-section text-center">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<h2>About Seedval</h2>
+			<p>SeedVal is a simplified waterfall calculator that visualizes traditional VC and Angel investments terms. The purpose of SeedVal is to help technical founders protect their equity by understanding the confusing legal terms in investment docs.
+				<p>The current waterfall assumes a pre money cap table with nothing but common shares. Options, convertible debt, SAFE agreements or multiple preferred rounds are not considered. </p>
+				<p>If you find this tool helpful let me know in the feedback section. I may add on more complexity for multiple rounds and different investment types if there is enough interest.</p>
+		</div>
+	</div>
+</section>
 
-    <!-- Download Section -->
-    <section id="download" class="content-section text-center">
-        <div class="download-section">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Download Grayscale</h2>
-                    <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Download Section -->
+<section id="download" class="content-section text-center">
+	<div class="download-section">
+		<div class="container">
+			<div class="col-lg-8 col-lg-offset-2">
+				<h2>Calculator</h2>
+				<p>Adjust terms to see the sensitivity of equity allocation across multiple exit values.</p>
+			</div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Start Bootstrap</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+					<form>
+						<div class="col-sm-3">
+							<h2>Pricing</h2>
+							<div class="form-group">
+								<label># of New Preferred Shares</label>
+								<input ng-model="scenario.pShares" class="form-control" type="number" placeholder="">
+							</div>
+							<div class="form-group">
+								<label>Price per New Preferred Share</label>
+								<input ng-model="scenario.pPrice" class="form-control" type="number" placeholder="">
+							</div>
+							<div class="form-group">
+								<label>Fully Dilutive Common Shares Outstanding</label>
+								<input ng-model="scenario.cShares" class="form-control" type="number" placeholder="">
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<h2>Terms</h2>
+							<div class="form-group">
+								<label>Liquidation Preference Multiple</label>
+								<select ng-model="scenario.lpMultiple" class="form-control">
+					                <option value="1" type="number">1x</option>
+					                <option value=1.5 type="number">1.5x</option>
+					                <option value="2" type="number">2x</option>
+					                <option value="2.5" type="number">2.5x</option>
+					                <option value="3" type="number">3x</option>
+					            </select>
+							</div>
+							<div class="form-group">
+								<label>Participation Rights</label>
+								<select ng-model="scenario.part" class="form-control">
+					                <option value="true">yes</option>
+					                <option value="false">no</option>
+					            </select>
+							</div>
+							<div class="form-group" ng-if="scenario.part == 'true'">
+								<label>Participation Cap</label>
+								<select ng-model="scenario.partCap" class="form-control">
+					                <option value="true">yes</option>
+					                <option value="false">no</option>
+					            </select>
+							</div>
+						</div>
+						<div class="col-sm-3" ng-if="scenario.partCap == 'true'">
+							<div class="form-group">
+								<label>Cap Multiple</label>
+								<select ng-model="scenario.partCapMultiple" class="form-control">
+					                <option value="1">1x</option>
+					                <option value="1.5">1.5x</option>
+					                <option value="2">2x</option>
+					                <option value="2.5">2.5x</option>
+					                <option value="3">3x</option>
+					            </select>
+							</div>
+							<div class="form-group">
+								<label>Cumulative Dividends</label>
+								<select ng-model="scenario.div" class="form-control">
+									<option value="true">yes</option>
+									<option value="false">no</option>
+								</select>
+							</div>
+							<div class="form-group" ng-if="scenario.div == 'true'">
+								<label>Dividend Compounding Period</label>
+								<select ng-model="scenario.divCompound" class="form-control">
+									<option value="1">annual</option>
+									<option value="2">semi-annual</option>
+								</select>
+							</div>
+							<div class="form-group" ng-if="scenario.div == 'true'">
+								<label>Dividend % Rate (decimal)</label>
+								<input ng-model="scenario.divRate" class="form-control" type="number" min="0" max="1" step="0.01" placeholder="0.03 = 3%">
+							</div>
+							<div class="form-group" ng-if="scenario.div == 'true'">
+								<label>Years to exit</label>
+								<input ng-model="scenario.exitYears" class="form-control" placeholder="">
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<h2>Assumptions</h2>
+							<div class="form-group">
+								<label>Min Exit Value</label>
+								<input ng-model="scenario.minExitVal" class="form-control" placeholder="">
+							</div>
+							<div class="form-group">
+								<label>Max Exit Value</label>
+								<input ng-model="scenario.maxExitVal" class="form-control" placeholder="">
+							</div>
+						</div>
+						<button ng-click="homeCtrl.waterfallCalc(scenario)" type="submit" class="btn btn-primary">Submit</button>
+					</form>
+
+				<div class="col-sm-12">
+					<h4>Pre-Money Valuation</h4> {{homeCtrl.pre | currency:"$":0}}
+
+					<h4>Post-Money Valuation</h4> {{homeCtrl.post | currency:"$":0}}
+
+					<h4>Preferred Value</h4> {{homeCtrl.resultsObj.pVal}}
+
+					<h4>Common Value</h4> {{homeCtrl.resultsObj.cVal}}
+
+					<h4>Exit Value</h4> {{homeCtrl.resultsObj.iVal}}
+					<br>
+
+				</div>
+				<br>
+				<canvas id="myChart" width="600px" height="900px"></canvas>
+
+		</div>
+	</div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="container content-section text-center">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<h2>Contact SeedVal</h2>
+			<p>Send us a message if you have any questions, or if you would just like to say hello!</p>
+			<p><a href="mailto:markstewy@gmail.com">markstewy@gmail.com</a>
+			</p>
+			<ul class="list-inline banner-social-buttons">
+				<li>
+					<a href="https://twitter.com/marksstewy" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+				</li>
+				<li>
+					<a href="https://github.com/markstewy/startup-waterfall" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/markspencerstewart" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
 
 
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>Copyright &copy; Your Website 2016</p>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer>
+	<div class="container text-center">
+		<p style="font-size:10px;">Copyright &copy; SeedVal 2017</p>
+	</div>
+</footer>
