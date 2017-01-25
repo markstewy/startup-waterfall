@@ -10,6 +10,7 @@ var config = require('./config');
 // CONTROLLERS //
 var toDoCtrl = require('./controllers/toDoCtrl');
 var UserCtrl = require('./controllers/UserCtrl');
+var waterfallCtrl = require('./controllers/waterfallCtrl');
 
 // SERVICES //
 var passport = require('./services/passport');
@@ -64,6 +65,8 @@ app.post('/register', UserCtrl.register);
 app.get('/user', UserCtrl.read);
 app.get('/me', isAuthed, UserCtrl.me);
 app.put('/user/:_id', isAuthed, UserCtrl.update);
+
+app.post('/waterfall', waterfallCtrl.waterfallCalc);
 
 // CONNECTIONS //
 var mongoURI = config.MONGO_URI;

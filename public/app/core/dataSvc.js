@@ -20,6 +20,7 @@
 		svc.logout = logout;
 		svc.registerUser = registerUser;
 		svc.updateToDo = updateToDo;
+		svc.wfCalc = wfCalc;
 
         /*
         ========== AUTH ==========
@@ -158,8 +159,23 @@
                 method: 'GET',
                 url: 'http://swapi.co/api/people/' + n
             }).then(function(response) {
-                // console.log(response)
                 deferred.resolve(response.data.name)
+            })
+            return deferred.promise;
+        };
+
+		/*
+        ========== Waterfall Calcs (hidden from front-end) ==========
+        */
+
+        function wfCalc(w) {
+            var deferred = $q.defer();
+            $http({
+                method: 'POST',
+                url: '/waterfall',
+				data: w
+            }).then(function(response) {
+                deferred.resolve(response)
             })
             return deferred.promise;
         };
