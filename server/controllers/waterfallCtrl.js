@@ -8,21 +8,21 @@ module.exports = {
 		// ===================================
         function waterfallCalc(w) {
             // ======= RAPID TESTING =======
-            // var w = {
-            //         pShares: 10,
-            //         pPrice: 1,
-            //         cShares: 90,
-            //         lpMultiple: '1.5',
-            //         part: 'true',
-            //         partCap: 'true',
-            //         partCapMultiple: '2',
-            //         div: 'true',
-            //         divCompound: '1',
-            //         divRate: 0.05,
-            //         exitYears: '5',
-            //         minExitVal: '0',
-            //         maxExitVal: '110'
-            //     }
+            var w = {
+                    pShares: 10,
+                    pPrice: 1,
+                    cShares: 90,
+                    lpMultiple: '1.5',
+                    part: 'true',
+                    partCap: 'true',
+                    partCapMultiple: '2',
+                    div: 'true',
+                    divCompound: '1',
+                    divRate: 0.05,
+                    exitYears: '5',
+                    minExitVal: '0',
+                    maxExitVal: '110'
+                }
                 // ==============
             if (w.part === 'false') {
                 w.partCap = null;
