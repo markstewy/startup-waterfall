@@ -8,21 +8,21 @@ module.exports = {
 		// ===================================
         function waterfallCalc(w) {
             // ======= RAPID TESTING =======
-            var w = {
-                    pShares: 10,
-                    pPrice: 1,
-                    cShares: 90,
-                    lpMultiple: '1.5',
-                    part: 'true',
-                    partCap: 'true',
-                    partCapMultiple: '2',
-                    div: 'true',
-                    divCompound: '1',
-                    divRate: 0.05,
-                    exitYears: '5',
-                    minExitVal: '0',
-                    maxExitVal: '110'
-                }
+            // var w = {
+            //         pShares: 10,
+            //         pPrice: 1,
+            //         cShares: 90,
+            //         lpMultiple: '1.5',
+            //         part: 'true',
+            //         partCap: 'true',
+            //         partCapMultiple: '2',
+            //         div: 'true',
+            //         divCompound: '1',
+            //         divRate: 0.05,
+            //         exitYears: '5',
+            //         minExitVal: '0',
+            //         maxExitVal: '110'
+            //     }
                 // ==============
             if (w.part === 'false') {
                 w.partCap = null;
@@ -40,7 +40,9 @@ module.exports = {
                 cVal: [],
                 iVal: [],
                 pValChart: [],
-                cValChart: []
+                cValChart: [],
+				pre: "",
+				post: ""
             };
             var minExitVal = parseFloat(w.minExitVal);
             var maxExitVal = parseFloat(w.maxExitVal);
@@ -80,6 +82,8 @@ module.exports = {
                 resultsObj.iVal.push(iExitVal);
                 iExitVal = iExitVal + interval;
             }
+			resultsObj.pre = pre;
+			resultsObj.post = post;
             // console.log(resultsObj)
 			return resultsObj;
         }

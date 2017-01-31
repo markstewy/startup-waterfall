@@ -17,6 +17,8 @@
 					return dataSvc.wfCalc(w)
 						.then(function(res) {
 							console.log(res)
+							vm.pre = res.data.pre;
+							vm.post = res.data.post;
 							wfChart(res)
 						})
 				}
