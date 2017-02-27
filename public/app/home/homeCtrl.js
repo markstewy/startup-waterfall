@@ -43,7 +43,8 @@
 	            type: 'line',
 	            data: {
 	                labels: calcs.data.iVal,
-					width:500,
+					// height:300,
+					// width:500,
 	                datasets: [{
 	                    label: "Preferred",
 	                    fill: true,
@@ -74,7 +75,7 @@
 	                },
 	                animation: {
 	                    duration: 750,
-	                },
+	                }
 	            }
 	        });
 			console.log(document.getElementById("myChart").width);
