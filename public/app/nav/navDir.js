@@ -8,8 +8,6 @@ angular.module('app.nav')
 	link: function() {
 		// jQuery to collapse the navbar on scroll
 		function collapseNavbar() {
-			console.log($('.navbar'));
-			console.log($(".navbar").offset());
 		    if ($(".navbar").offset().top > 50) {
 		        $(".navbar-fixed-top").addClass("top-nav-collapse");
 		    } else {

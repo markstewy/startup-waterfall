@@ -26,7 +26,9 @@
         function wfChart(calcs) {
 			// CHARTS JS
 			// http://codepen.io/natenorberg/pen/WwqRar
+			console.log(calcs);
 	        var ctx = document.getElementById("myChart").getContext("2d");
+			console.log(document.getElementById("myChart").width);
 	        var colors = {
 	            darkBlue: {
 	                fill: '#92bed2',
@@ -41,6 +43,7 @@
 	            type: 'line',
 	            data: {
 	                labels: calcs.data.iVal,
+					width:500,
 	                datasets: [{
 	                    label: "Preferred",
 	                    fill: true,
@@ -63,7 +66,7 @@
 	                }]
 	            },
 	            options: {
-	                responsive: false,
+	                responsive: true,
 	                scales: {
 	                    yAxes: [{
 	                        stacked: true,
@@ -74,6 +77,7 @@
 	                },
 	            }
 	        });
+			console.log(document.getElementById("myChart").width);
         }//end wfChart
 
     }; //end of controller
